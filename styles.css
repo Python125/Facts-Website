@@ -67,6 +67,14 @@ body {
   box-shadow: none;
 }
 
+#topic-footer-nav .topic-btn:hover:not(.active) {
+  background-color: #00ff99;
+  color: #000;
+  transform: scale(1.05);
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .genre-img {
   height: 6.5rem;
 }
