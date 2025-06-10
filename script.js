@@ -1,25 +1,19 @@
-// filters.js
-
 const wrappers = document.querySelectorAll(".wrapper");
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
+// const next = document.querySelector(".next");
+// const prev = document.querySelector(".prev");
+// const [next] = document.getElementsByClassName("next");
+// const [prev] = document.getElementsByClassName("prev");
 let start = 0;
 let end = 10;
 
 const hideAllWrappers = () => {
-  wrappers.forEach(el => {
-    el.classList.add("hide");
-    el.style.display = "none";
-  });
+  wrappers.forEach(el => el.classList.add("hide"));
 };
 
 const showInitialPage = () => {
   hideAllWrappers();
   wrappers.forEach((el, i) => {
-    if (i < end) {
-      el.classList.remove("hide");
-      el.style.display = "block";
-    };
+    if (i < end) el.classList.remove("hide");
   });
 };
 
@@ -30,10 +24,7 @@ const setupPagination = () => {
     start = end;
     end += 10;
     wrappers.forEach((el, i) => {
-      if (i >= start && i < end) {
-        el.classList.remove("hide");
-        el.style.display = "block";
-      };
+      if (i >= start && i < end) el.classList.remove("hide");
     });
   });
 
@@ -43,10 +34,7 @@ const setupPagination = () => {
     end = start;
     start -= 10;
     wrappers.forEach((el, i) => {
-      if (i >= Math.max(start, 0) && i < end) {
-        el.classList.remove("hide");
-        el.style.display = "block";
-      };
+      if (i >= Math.max(start, 0) && i < end) el.classList.remove("hide");
     });
   });
 };
@@ -77,6 +65,7 @@ const typewriter = () => {
     if (textPos++ === arrLength) {
       textPos = 0;
       index++;
+
       if (index !== aText.length) {
         arrLength = aText[index].length;
         setTimeout(typeWriter, 500);
